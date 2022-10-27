@@ -1,0 +1,28 @@
+{
+//  "extends": "@tsconfig/node14/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "declaration": false,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "noLib": false,
+    "allowJs": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true, //If set to true, skips type-checking of default library declaration files
+    "outDir": "dist", // ./dist"
+    "baseUrl": "./src",
+    "noEmit": false,
+    "strict": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "types": ["reflect-metadata"],
+
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/node_modules", "**/build", "**/dist", "**/*.md", "**/rollup.config.js"]
+
+
+}
