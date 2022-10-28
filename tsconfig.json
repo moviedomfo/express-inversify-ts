@@ -1,7 +1,9 @@
 {
-//  "extends": "@tsconfig/node14/tsconfig.json",
+  //"extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
     "target": "ES6",
+    "lib": ["es6"],
+
     "module": "commonjs",
     "esModuleInterop": true,
     "moduleResolution": "node",
@@ -19,7 +21,10 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "types": ["reflect-metadata"],
-
+    // "paths": {
+    //   "@/*": ["./src/*"],
+    //   "common/*": ["./src/common/*"],
+    // },
   },
   "include": ["src/**/*"],
   "exclude": ["**/node_modules", "**/build", "**/dist", "**/*.md", "**/rollup.config.js"]
