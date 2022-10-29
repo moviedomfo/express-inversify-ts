@@ -12,7 +12,6 @@ require('dotenv').config();
     process.exit(1);
  }
 
- //DependencyIngection.Init();
  
 const app = express();
 
