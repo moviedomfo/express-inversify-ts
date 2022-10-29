@@ -11,7 +11,7 @@ pnpm i -D typescript nodemon @types/node @types/express
 
     In the root folder create 
 
-    `
+```java
         {
             "watch": ["src/"]
             , "execMap": {
@@ -22,7 +22,7 @@ pnpm i -D typescript nodemon @types/node @types/express
             },
             "ext": "js,json,ts,html"
         }
-    `
+```java
 
 ### Set up typescript
     npx tsc --init
@@ -55,9 +55,11 @@ Is a NodeJs middleware that is needed to customize request logs
     pnpm i nstall morgan @types/morgan
 ```
 
-### inversify 
-[https://inversify.io/]  
-[https://github.com/inversify/inversify-express-utils]
+### Inversify 
+
+**Resources**
+* [inversify](https://inversify.io/)  
+* [Inversify-express-utils] (https://github.com/inversify/inversify-express-utils)
 
 Is a powerful and lightweight inversion of control container
 
