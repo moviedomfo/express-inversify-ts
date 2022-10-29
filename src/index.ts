@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import { TYPES } from "./common/commonConstants";
 import "dotenv/config";
 import express from "express";
@@ -11,14 +12,13 @@ import "./controllers/pesonPub.controller";
 import { InversifyExpressServer } from "inversify-express-utils";
 
 import { Container } from "inversify";
-import "reflect-metadata";
-
 import PersonPubService from "./service/personPub.service";
 import { IPersonPubService } from "./service/IPersonPubService";
 
-export const CONTAINER = new Container({ defaultScope: "Singleton" });
+const DIContainer = new Container({ defaultScope: "Singleton" });
+//const DIContainer = new Container();
 
-CONTAINER.bind<IPersonPubService>(TYPES.PersonPubService)
+DIContainer.bind<IPersonPubService>(TYPES.PersonPubService)
   .to(PersonPubService)
   .inSingletonScope();
 
@@ -37,7 +37,7 @@ if (!process.env.PORT) {
 const PORT = process.env.PORT || 5000;
 const URL = `${process.env.BASE_URL}:${PORT}`;
 
-const server = new InversifyExpressServer(CONTAINER);
+const server = new InversifyExpressServer(DIContainer);
 
 server.setConfig((app) => {
   // add body parser

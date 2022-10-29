@@ -19,7 +19,7 @@ export  const AppConstants = {
 
 
 export const TYPES = {
-     PersonPubService: "IPersonPubService",
+     PersonPubService: "PersonPubService",
      PersonPubController: "IPersonPubController",
     PproductsPubService: "IPproductsPubService"
  };

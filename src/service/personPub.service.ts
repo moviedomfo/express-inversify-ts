@@ -7,7 +7,7 @@ import { IPersonPubService } from './IPersonPubService';
 
 @injectable()
 export default class PersonPubService implements IPersonPubService {
-  // @Post("/Client")
+  
   public async Customer(req: Person): Promise<void> {
     try {
       await pushToQueue(req,"customers");
@@ -24,17 +24,14 @@ export default class PersonPubService implements IPersonPubService {
     }
   }
 
-  // @Get("/getById")
   public async GetById(id: number): Promise<Person> {
     return getById(id);
   }
 
-  // @Get("/getAll")
   public async GetAll(): Promise<Person[]> {
     return getAll();
   }
 
-  // @Get("/clearAll")j
   public async ClearAll(): Promise<void> {
     return clearAll();
   }
