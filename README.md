@@ -59,7 +59,7 @@ Is a NodeJs middleware that is needed to customize request logs
 
 **Resources**
 * [inversify](https://inversify.io/)  
-* [Inversify-express-utils] (https://github.com/inversify/inversify-express-utils)
+* [Inversify-express-utils](https://github.com/inversify/inversify-express-utils)
 
 Is a powerful and lightweight inversion of control container
 
@@ -77,12 +77,12 @@ To use for express controllers visit
 ```json
 "compilerOptions": {
         "target": "es5",
-  -->   "lib": ["es6", "dom"],
-  -->   "types": ["reflect-metadata"], 
+  "lib": ["es6", "dom"],
+    "types": ["reflect-metadata"], 
         "module": "commonjs",
         "moduleResolution": "node",
-  -->   "experimentalDecorators": true,
-  -->   "emitDecoratorMetadata": true
+    "experimentalDecorators": true,
+     "emitDecoratorMetadata": true
     }
 
 ```
