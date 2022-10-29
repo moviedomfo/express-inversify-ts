@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   
-    "dev": "nodemon --exec npm run start",
     "start": "npm run build && node dist/indexClasic.js",
+    "dev": "nodemon --exec npm run start",
     "build": "tsc && babel src -d dist --source-maps --copy-files",
+    "start11": "tsc && babel-node --extensions \".ts\" src/indexClasic.ts",
     "start_babel": "tsc && babel-node --extensions \".ts\" src/indexClasic.ts"
-  }, 
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -41,6 +41,7 @@
     "inversify": "^6.0.1",
     "inversify-express-utils": "^6.4.3",
     "morgan": "^1.10.0",
+    "pnpm": "^7.14.1",
     "reflect-metadata": "^0.1.13"
   }
 }

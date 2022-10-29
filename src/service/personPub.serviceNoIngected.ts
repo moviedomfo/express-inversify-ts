@@ -4,7 +4,7 @@ import { IPersonPubService } from './IPersonPubService';
 
 
 
-export default class personPubServiceNoIngected implements IPersonPubService {
+export default class PersonPubServiceNoIngected implements IPersonPubService {
   // @Post("/Client")
   public async Customer(req: Person): Promise<void> {
     try {

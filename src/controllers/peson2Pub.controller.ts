@@ -2,14 +2,14 @@
 
 import {NextFunction, Request,Response} from 'express';
 import { Person } from 'models/PersonBE';
-import PersonPubService from '../service/personPub.service';
+import PersonPubServiceNoIngected from '../service/personPub.serviceNoIngected';
 import { IPersonPubService } from '../service/IPersonPubService';
 
 
 export default class Person2PubController {
   private personService: IPersonPubService ;
   constructor() { 
-      this.personService= new PersonPubService();
+      this.personService= new PersonPubServiceNoIngected();
         }
 
   public async Provider(req: Request,  res: Response, next: NextFunction) {

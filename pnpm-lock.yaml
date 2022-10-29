@@ -23,6 +23,7 @@ specifiers:
   inversify-express-utils: ^6.4.3
   morgan: ^1.10.0
   nodemon: ^2.0.20
+  pnpm: ^7.14.1
   prettier: ^2.7.1
   reflect-metadata: ^0.1.13
   ts-node-dev: ^2.0.0
@@ -36,6 +37,7 @@ dependencies:
   inversify: 6.0.1
   inversify-express-utils: 6.4.3
   morgan: 1.10.0
+  pnpm: 7.14.1
   reflect-metadata: 0.1.13
 
 devDependencies:
@@ -3227,6 +3229,12 @@ packages:
     dependencies:
       find-up: 3.0.0
     dev: true
+
+  /pnpm/7.14.1:
+    resolution: {integrity: sha512-jxnp3SGzTZcSITKfaTfRrkOJYSeHwlU/rF+K9ofaIeHUYF3zR3Qcy5vl8mm07ECMfWhNjOy2phs2o3Zb41pHAg==}
+    engines: {node: '>=14.6'}
+    hasBin: true
+    dev: false
 
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
