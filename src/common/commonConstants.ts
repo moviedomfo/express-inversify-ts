@@ -25,3 +25,9 @@ export const TYPES = {
  };
 
 
+ export const QUEUES = {
+     Providers: "providers",
+     Customers: "customers"
+ };
+
+

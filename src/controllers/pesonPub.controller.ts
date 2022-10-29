@@ -37,7 +37,7 @@ export default class PersonPubController {
   }
 
  
-  @httpGet("/")
+  @httpGet("/provider")
   public async GetAll(@request() req: Request, @response() res: Response, next: NextFunction) {
     try {
 

@@ -1,7 +1,8 @@
-import { Providers } from './../models/Store';
+import { Providers, Customers } from './../models/Store';
 import { Person } from "models/PersonBE";
 import { injectable } from 'inversify';
 import { IPersonPubService } from './IPersonPubService';
+import { QUEUES } from './../common/commonConstants';
 
 
 
@@ -10,7 +11,7 @@ export default class PersonPubService implements IPersonPubService {
   
   public async Customer(req: Person): Promise<void> {
     try {
-      await pushToQueue(req,"customers");
+      await pushToQueue(req,QUEUES.Customers);
     } catch (err) {
       console.log("push err  " + JSON.stringify(err));
     }
@@ -18,7 +19,7 @@ export default class PersonPubService implements IPersonPubService {
 
   public async Provider(req: Person): Promise<void> {
     try {
-      await pushToQueue(req,"providers");
+      await pushToQueue(req,QUEUES.Providers);
     } catch (err) {
       console.log("push err  " + JSON.stringify(err));
     }
@@ -39,10 +40,22 @@ export default class PersonPubService implements IPersonPubService {
 
 const pushToQueue = async (req: Person,queue : string) => {
 
-  return new Promise(() => {
-    if(queue)
-      Providers.push(req);
-    //resolve();
+  return new Promise((resolve,reject) => {
+    if(queue === QUEUES.Providers)
+    {
+    Providers.push(req);
+    resolve(null);
+    }
+  
+
+    if(queue === QUEUES.Customers){
+        Customers.push(req);
+        resolve(null);
+    }
+      
+ 
+
+      reject(`The QUEUE ${queue} doesn´t exist`);
   });
 
 };

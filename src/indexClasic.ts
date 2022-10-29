@@ -3,7 +3,6 @@ import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
 import { personRouter } from "./rutes/personPub.router";
-import * as bodyParser from 'body-parser';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
