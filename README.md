@@ -11,7 +11,7 @@ pnpm i -D typescript nodemon @types/node @types/express
 
     In the root folder create 
 
-```java
+```json
         {
             "watch": ["src/"]
             , "execMap": {
@@ -22,7 +22,7 @@ pnpm i -D typescript nodemon @types/node @types/express
             },
             "ext": "js,json,ts,html"
         }
-```java
+```
 
 ### Set up typescript
     npx tsc --init
