@@ -86,12 +86,18 @@ To use for express controllers visit
     }
 
 ```
-
-### babel to translile ts
+### Absolute path @model @commont tsconfig-paths/register
+ Para que que al transpilar se reconozcan las rutas absolutas
+```json
+    {
+      "dev": "nodemon --exec ts-node  -r tsconfig-paths/register ./src/index.ts ",
+    }
+```
+### babel to translile ts (if we use baben we  didn't nee tsc to transpile in the package.json script)
 
 @babel/preset-typescript for babel to undestand ts
 pnpm install --save-dev @babel/core @babel/node @babel/cli @babel/preset-typescript @babel/plugin-transform-typescript @babel/preset-env
-
+yarn add -D @babel/core @babel/node @babel/cli @babel/preset-typescript @babel/plugin-transform-typescript @babel/preset-env @babel/pluging-module-resolve
 `Don't forget the babel config file` --> *.babelrc* 
    
 -  In the root folder create .babelrc
@@ -107,6 +113,14 @@ pnpm install --save-dev @babel/core @babel/node @babel/cli @babel/preset-typescr
 }
 
 ```
+### Absolute path @model @commont etc '@babel/pluging-module-resolve' 
+    ver https://www.youtube.com/watch?v=I-f6aQzHHMo
+  
+  Para que babel entienda las rutas absolutas debemos configurar
+    
+  yarn add tsconfig-paths
+
+  y agregarolo al script como 
 
 ## Documentation
 Step 1: Decorate your controllers
