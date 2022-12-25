@@ -4,7 +4,15 @@ module.exports = function(api) {
   let presets =  
 
    [
-
+    ["minify", {
+      "mangle": {
+        "exclude": ["MyCustomError"]
+      },
+      "unsafe": {
+        "typeConstructors": false
+      },
+      "keepFnName": true
+    }],
     "@babel/preset-env",
    "@babel/preset-typescript"
   ];

@@ -1,15 +1,24 @@
 # express-inversify-ts
 Express  API  using clean architecture typescript inversify mongodb  Axios to consume externals fake APIs and some other interesting libraries
 
-## packages to install
-pnpm install express dotenv
+## Usage
 
+1) Clone this repo
+2) yarn install
+3) run 
+    ```
+        yarn start
+    ```
+
+## packages to install
+
+pnpm install express dotenv
 pnpm i -D typescript @types/express @types/node
 pnpm i -D typescript nodemon @types/node @types/express
 
 `Don't forget the nodemon file` --> *nodemon.json* 
 
-In the root folder create 
+In the root folder create nodemon.json
 
 ```json
         {
@@ -24,14 +33,14 @@ In the root folder create
         }
 ```
 
-### Set up typescript
+## Set up typescript
     npx tsc --init
     
 pnpm install --save-dev eslint prettier eslint-config-prettier eslint-plugin-prettier @typescript-eslint/parser @typescript-eslint/eslint-plugin
 `Don't forget the ts file` --> *tsconfig.json* 
 
 
-### Set up Eslint
+## Set up Eslint
 
     npx eslint --init
 

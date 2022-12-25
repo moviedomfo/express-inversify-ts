@@ -1,4 +1,4 @@
-import 'reflect-metadata';
+import "reflect-metadata";
 import { TYPES } from "./common/commonConstants";
 import "dotenv/config";
 import express from "express";
@@ -14,9 +14,11 @@ import { InversifyExpressServer } from "inversify-express-utils";
 import { Container } from "inversify";
 import PersonPubService from "./service/personPub.service";
 import { IPersonPubService } from "./service/IPersonPubService";
-import { personRouter } from "./rutes/personPub.router";
-import './controllers/pesonPub.controller';
-import DependencyIngection from './common/Container';
+import { personRouter } from "./routes/personPub.router";
+import "./controllers/pesonPub.controller";
+import DependencyIngection from "./common/Container";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 
 // const DIContainer = new Container({ defaultScope: "Singleton" });
 //const DIContainer = new Container();
@@ -31,14 +33,14 @@ require("dotenv").config();
 if (!process.env.PORT) {
   process.exit(1);
 }
+const CURRENT_DIR = dirname(fileURLToPath(import.meta.url));
 
-const container= DependencyIngection.Init();
-
+const container = DependencyIngection.Init();
 
 const PORT = process.env.PORT || 5000;
 const URL = `${process.env.BASE_URL}:${PORT}`;
 
-const server = new InversifyExpressServer(container );
+const server = new InversifyExpressServer(container);
 
 server.setConfig((app) => {
   // add body parser
@@ -48,10 +50,10 @@ server.setConfig((app) => {
     })
   );
   app.use(bodyParser.json());
-  app.use(express.json());//parses incoming JSON requests and puts the parsed data in req.body.
-  app.use(helmet()); 
+  app.use(express.json()); //parses incoming JSON requests and puts the parsed data in req.body.
+  app.use(helmet());
   app.use(morgan("short"));
-  //app.use('/api/personspubs',personRouter); route isn´t needed 
+  //app.use('/api/personspubs',personRouter); route isn´t needed
 });
 
 const app = server.build();
